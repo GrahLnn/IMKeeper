@@ -9,7 +9,7 @@
 
 ## Usage
 
-1. clone本项目
+1. `git clone https://github.com/GrahLnn/IMKeeper.git`
 2. 配置`config.ini`（需要正确配置应用程序名，可以通过`curApp := WinGetProcessName(hwnd)`自行检查）
 3. 双击运行`IMKeeper.exe`（修改`config.ini`后需要重新启动）
 4. 双击`.bat`添加到开机启动项（可选）
