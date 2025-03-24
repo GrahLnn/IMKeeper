@@ -38,21 +38,27 @@ class IME {
     }
 
     static toChinese() {
-        loop 5 {
+        loop 50 {
             IME.set("ch", true)
             Sleep(50)
-            if !IME.isEnglishMode()
-                return true
+            if !IME.isEnglishMode() {
+                Sleep(100)
+                if !IME.isEnglishMode()
+                    return true
+            }
         }
         return false
     }
 
     static toEnglish() {
-        loop 5 {
+        loop 50 {
             IME.set("ch", false)
             Sleep(50)
-            if IME.isEnglishMode()
-                return true
+            if IME.isEnglishMode() {
+                Sleep(100)
+                if IME.isEnglishMode()
+                    return true
+            }
         }
         return false
     }
@@ -100,7 +106,7 @@ class InputModeManager {
                     IME.toChinese()
             }
             this.lastApp := curApp
-
+            ; TrayTip("focus " . curApp . " " . IME.isEnglishMode())
         } catch {
         }
     }
